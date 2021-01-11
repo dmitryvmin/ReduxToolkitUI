@@ -4,8 +4,8 @@ import {persistReducer} from 'redux-persist';
 import {combineReducers} from "redux";
 import storage from 'redux-persist/lib/storage'
 
-import {candidatesSlice} from "./candidates/slices";
-import {UISlice} from "./UI/slices";
+import {dataStore} from "./dataStore/slices";
+import {UIStore} from "./UIStore/slices";
 
 const persistConfig = {
   key: 'root',
@@ -13,8 +13,8 @@ const persistConfig = {
 };
 
 const baseReducer = combineReducers({
-  candidates: candidatesSlice.reducer,
-  UI: UISlice.reducer,
+  dataStore: dataStore.reducer,
+  UIStore: UIStore.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, baseReducer);

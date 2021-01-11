@@ -1,1 +1,0 @@
-export const activeStep = state => state.UI.activeStep;

@@ -2,7 +2,8 @@ import {useCallback} from "react";
 import { useDispatch, useSelector } from 'react-redux';
 
 import {candidatesData, candidatesDataError, candidatesDataIsLoading, candidatesDataStepMap} from "./selectors";
-import {fetchCandidatesData, updateCandidateStep} from "./thunks";
+import {fetchCandidatesData} from "./thunks";
+import {updateCandidateStep} from "./slices";
 import {UseCandidatesStoreReturnType} from "./types";
 
 export const useCandidatesStore = (): UseCandidatesStoreReturnType => {
@@ -31,7 +32,9 @@ export const useCandidatesStore = (): UseCandidatesStoreReturnType => {
   );
 
   const _updateCandidateStep = useCallback(
-    async (props) => await dispatch(updateCandidateStep(props)),
+    async (props) => {
+      return await dispatch(updateCandidateStep(props));
+    },
     [
       dispatch,
     ],

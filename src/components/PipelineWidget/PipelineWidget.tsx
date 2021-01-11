@@ -3,7 +3,7 @@ import React, {FC, useEffect} from "react";
 import * as styles from "./styles.module.less";
 import {PipelineTabs} from "../PipelineTabs";
 import {PipelineTable} from "../PipelineTable";
-import {useCandidatesStore} from "../../store/candidates/useCandidatesStore";
+import {useCandidatesStore} from "../../stores/dataStore/useCandidatesStore";
 
 export const PipelineWidget: FC<{}> = () => {
 

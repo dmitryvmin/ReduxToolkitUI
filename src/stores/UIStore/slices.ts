@@ -7,8 +7,8 @@ export const initialState: UIStoreStateType = {
   activeStep: PipelineTabsEnum[0],
 };
 
-export const UISlice = createSlice({
-  name: 'UI',
+export const UIStore = createSlice({
+  name: 'UIStore',
   initialState,
   reducers: {
     setActiveStep: (state, action) => {
@@ -17,5 +17,5 @@ export const UISlice = createSlice({
   },
 });
 
-export const { setActiveStep } = UISlice.actions;
+export const { setActiveStep } = UIStore.actions;
 

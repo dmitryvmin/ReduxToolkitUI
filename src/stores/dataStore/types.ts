@@ -2,13 +2,13 @@ import {SerializedError} from "@reduxjs/toolkit";
 
 import {CandidateInfoType, PipelineStepType} from "../../API/schema/types";
 import {APILoadingStateType} from "../types";
-import {PipelineTableTabType} from "../UI/types";
+import {PipelineTableTabType} from "../UIStore/types";
 
 export type CandidatesStoreStateType = {
-  data: CandidateInfoType[];
-  dataStepMap: StepMapType;
-  loading: APILoadingStateType;
-  error: null | SerializedError;
+  candidatesData: CandidateInfoType[];
+  candidatesDataStepMap: StepMapType;
+  candidatesDataLoading: APILoadingStateType;
+  candidatesDataError: null | SerializedError;
 }
 
 export type StepMapType = {
@@ -16,10 +16,10 @@ export type StepMapType = {
 };
 
 export type UseCandidatesStoreReturnType = {
-  candidatesData: CandidatesStoreStateType["data"];
-  candidatesDataStepMap: CandidatesStoreStateType["dataStepMap"];
-  candidatesDataIsLoading: CandidatesStoreStateType["loading"];
-  candidatesDataError: CandidatesStoreStateType["error"];
+  candidatesData: CandidatesStoreStateType["candidatesData"];
+  candidatesDataStepMap: CandidatesStoreStateType["candidatesDataStepMap"];
+  candidatesDataIsLoading: CandidatesStoreStateType["candidatesDataLoading"];
+  candidatesDataError: CandidatesStoreStateType["candidatesDataError"];
   fetchCandidatesData(): void;
   updateCandidateStep(props: UpdateCandidatePropType): void;
 }

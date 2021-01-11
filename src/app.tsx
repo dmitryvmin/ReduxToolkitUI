@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
 
-import {globalStore} from "./store";
+import {globalStore} from "./stores";
 import {PipelineWidget} from "./components/PipelineWidget";
 import * as styles from "./styles.module.less";
 

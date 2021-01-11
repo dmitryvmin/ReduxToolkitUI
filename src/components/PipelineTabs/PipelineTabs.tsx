@@ -1,10 +1,10 @@
 import React, {FC} from "react";
 
-import {useCandidatesStore} from "../../store/candidates/useCandidatesStore";
+import {useCandidatesStore} from "../../stores/dataStore/useCandidatesStore";
 
 import * as styles from "./styles.module.less";
-import {useUIStore} from "../../store/UI/useUIStore";
-import {PipelineTabsEnum} from "../../store/UI/constants";
+import {useUIStore} from "../../stores/UIStore/useUIStore";
+import {PipelineTabsEnum} from "../../stores/UIStore/constants";
 
 export const PipelineTabs: FC<{}> = () => {
 
@@ -33,7 +33,6 @@ export const PipelineTabs: FC<{}> = () => {
       />
       <div className={styles.TabNames}>
         {PipelineTabsEnum.map((tabName) => {
-          console.log("@@ tabName", tabName, candidatesDataStepMap, PipelineTabsEnum);
           return (
             <div
               key={tabName}

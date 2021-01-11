@@ -1,4 +1,4 @@
-import {createAction, createAsyncThunk} from "@reduxjs/toolkit";
+import {createAsyncThunk} from "@reduxjs/toolkit";
 import {candidatesAPI} from "../../API/candidatesAPI/candidatesAPI";
 import {UpdateCandidatePropType} from "./types";
 
@@ -6,7 +6,7 @@ import {UpdateCandidatePropType} from "./types";
  * Thunks
  */
 export const fetchCandidatesData = createAsyncThunk(
-  'candidates/fetchCandidates',
+  'dataStore/fetchCandidates',
   async () => {
     const response = await candidatesAPI.fetchAll();
     return response.data;
@@ -22,10 +22,13 @@ export const fetchCandidatesData = createAsyncThunk(
 //   },
 // );
 
-export const updateCandidateStep = createAction(
-  'candidates/updateCandidateStep',
-  function prepare(payload: UpdateCandidatePropType) {
-    return {
-      payload,
-    }
+export const _updateCandidateStep = createAsyncThunk(
+  'dataStore/updateCandidateStep',
+  function prepare({id, step}: UpdateCandidatePropType, {getState}: any) {
+
+    const _data = [...getState().data];
+    const idxToUpdate = _data.findIndex((obj => obj.id === id));
+    _data[idxToUpdate].step = step;
+
+    return _data;
   });

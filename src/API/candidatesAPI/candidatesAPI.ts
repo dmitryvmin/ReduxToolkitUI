@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import {CANDIDATES_PIPELINE_ENDPOINT} from "./constants";
-import {UpdateCandidatePropType} from "../../store/candidates/types";
+import {UpdateCandidatePropType} from "../../stores/dataStore/types";
 
 export const candidatesAPI = {
   fetchAll: async () => {

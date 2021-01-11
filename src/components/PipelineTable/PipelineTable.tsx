@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 import {format} from "date-fns";
 
-import {useCandidatesStore} from "../../store/candidates/useCandidatesStore";
+import {useCandidatesStore} from "../../stores/dataStore/useCandidatesStore";
 import * as styles from "./styles.module.less";
-import {useUIStore} from "../../store/UI/useUIStore";
+import {useUIStore} from "../../stores/UIStore/useUIStore";
 import {PipelineStepEnum} from "../../API/schema/constants";
 
 function formatDateCol(time_interview: string) {

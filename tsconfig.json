@@ -1,0 +1,5 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve", // pass jsx unchanged to next loader (babel loader)
+  },
+}

@@ -7,10 +7,15 @@
   "author": "WorkStep",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
+    "@types/redux-persist": "^4.3.1",
+    "axios": "^0.21.1",
+    "date-fns": "^2.16.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "redux": "^4.0.1"
+    "react-redux": "^7.2.2",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -24,13 +29,17 @@
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/plugin-syntax-import-meta": "7.2.0",
     "@babel/plugin-transform-runtime": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "^7.12.7",
     "@babel/register": "^7.6.0",
     "@babel/runtime-corejs2": "^7.6.0",
+    "@types/react-css-modules": "^4.6.2",
+    "@types/webpack-env": "^1.16.0",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "9.0.0",
     "babel-loader": "8.0.6",
+    "babel-plugin-react-css-modules": "^5.2.6",
     "css-loader": "^3.2.0",
     "less": "2.7.2",
     "less-loader": "5.0.0",
@@ -50,9 +59,22 @@
           "modules": false
         }
       ],
-      "@babel/preset-react"
+      "@babel/preset-react",
+      [
+        "@babel/preset-typescript",
+        {
+          "allExtensions": true,
+          "isTSX": true
+        }
+      ]
     ],
     "plugins": [
+      [
+        "react-css-modules",
+        {
+          "generateScopedName": "[name]__[local]"
+        }
+      ],
       [
         "@babel/plugin-transform-runtime",
         {

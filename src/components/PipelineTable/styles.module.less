@@ -1,0 +1,60 @@
+@import "../../styles/_colors";
+
+.PipelineTable {
+  position: relative;
+}
+
+.Row {
+  display: flex;
+  height: 40px;
+  border-bottom: 1px solid @light-grey;
+}
+
+.Col1,
+.Col2,
+.Col3 {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  color: @slate-grey;
+}
+
+.Col1 {
+  color: @space-grey;
+}
+.Col3 {
+  width: 200px;
+}
+
+.Select {
+  border: 1px solid @mid-grey;
+  padding: 5px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: @space-grey;
+  cursor: pointer;
+}
+
+.deselected {
+  color: @slate-grey;
+}
+
+.Header {
+  text-transform: uppercase;
+
+  > div {
+    color: black !important; // :(
+  }
+}
+
+.Loader {
+  position: absolute;
+  color: @navy;
+  top: 50%;
+}
+
+.Error {
+  position: absolute;
+  color: @red-orange;
+  top: 50%;
+}

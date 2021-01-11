@@ -6,7 +6,6 @@ const JS_DIR = path.resolve(ROOT_DIR, 'src');
 const PUBLIC_DIR = path.resolve(ROOT_DIR, 'public');
 const OUTPUT_DIR = path.resolve(PUBLIC_DIR, 'dist');
 
-
 module.exports = {
     mode: 'development',
     devtool: 'cheap-module-eval-source-map',
@@ -20,14 +19,14 @@ module.exports = {
         port: 3535,
     },
     entry: {
-        app: path.resolve(JS_DIR, 'app.jsx'),
+        app: path.resolve(JS_DIR, 'app.tsx'),
     },
     output:{
         path: OUTPUT_DIR,
         library: ['ws', '[name]'],
     },
     resolve: {
-        extensions: ['.js', '.json', '.jsx'],
+        extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
         modules: [
             JS_DIR,
             'node_modules',
@@ -36,7 +35,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(ts|tsx)$/,
                 loader: 'babel-loader',
                 include: [JS_DIR],
                 options: {
@@ -50,7 +49,10 @@ module.exports = {
                     'style-loader',
                     {
                         loader: 'css-loader',
-                        options: { importLoaders: 2 },
+                        options: {
+                            importLoaders: 2,
+                            modules: true,
+                        },
                     },
                     {
                         loader: 'postcss-loader',

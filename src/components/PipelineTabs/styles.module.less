@@ -1,0 +1,31 @@
+@import "../../styles/_colors";
+
+.Tabs {
+  width: 250px;
+  display: flex;
+  margin-top: 40px;
+}
+
+.TabMarker {
+  width: 5px;
+  height: 40px;
+  background-color: @teal;
+  margin-right: 10px;
+  transition: transform 0.1s;
+}
+
+.TabNames {}
+
+.TabName {
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: @mid-grey;
+}
+
+.active {
+  font-weight: 800;
+  color: black;
+}

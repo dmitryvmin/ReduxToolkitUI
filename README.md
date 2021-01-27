@@ -1,7 +1,7 @@
 # Exploring "redux-toolkit" package for Redux
 
-![alt text](https://github.com/dmitryvmin/ReduxToolkitUI/blob/main/public image.jpg?raw=true)
+![alt text](https://github.com/dmitryvmin/ReduxToolkitUI/blob/trunk/public/component_screenshot.png?raw=true)
 
-### Developing
+### Development
 
 `npm run serve`

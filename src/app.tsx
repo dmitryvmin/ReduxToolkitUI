@@ -9,7 +9,7 @@ import * as styles from "./styles.module.less";
 export function init(el) {
   ReactDOM.render((
     <Provider store={globalStore}>
-      <header className={styles.header}>My Pipeline</header>
+      <header className={styles.header}>Tabbable List Component</header>
       <PipelineWidget/>
     </Provider>
   ), el);
